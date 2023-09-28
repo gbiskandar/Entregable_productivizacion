@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 #cargamos los csv en dos dataframes diferentes, fake vs real news. HAY QUE REVISAR COMO HACERLO EN GIT
-dataset = pd.read_csv(r"XXX\WELFake_Dataset.csv")
+dataset = pd.read_csv("./Data/WELFake_Dataset.csv")
 
 #Eliminamos las columnas que no nos hacen falta en este análisis
 dataset.drop("Unnamed: 0",axis=1,inplace=True)
