@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienvenido al servicio de predicción de noticias falsas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Fondo en modo oscuro */
+            color: #fff; /* Texto en modo oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #222; /* Contenedor en modo oscuro */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff; /* Color de encabezado */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+    margin: 10px; /* margen en todos los lados del área de texto */
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333; /*modo oscuro */
+    border: 1px solid #555; /* Borde */
+    border-radius: 5px;
+    resize: none;
+    color: #fff; /* Texto dentro del area */
+}
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduzca el texto que desea analizar:</h1>
+        
+        <form method="POST">
+            <textarea name="texto" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" value="Analizar">
+        </form>
+    </div>
+</body>
+</html>

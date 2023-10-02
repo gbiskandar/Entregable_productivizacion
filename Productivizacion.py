@@ -71,11 +71,7 @@ Tfid_vectorizer = TfidfVectorizer(stop_words='english', max_df=0.8)
 Tfid_X_train = Tfid_vectorizer.fit_transform(X_train_word_tokenize)
 Tfid_X_test = Tfid_vectorizer.transform(X_test_word_tokenize)
 
-#Guardamos los modelos entrenados en pickle (HAY QUE REVISAR DONDE GUARDAR EN GIT)
-import pickle
 
-with open("TfidVectorizer_model.pkl", 'wb') as file:
-    pickle.dump(Tfid_vectorizer, file)
 
 #PREDICCIÓN CON XGBOOST ------------------------------------------------------------
 
@@ -103,9 +99,18 @@ print("Tiempo de entrenamiento tfid: {}".format(training_time_xgboost_tfid))
 print("XGBoost has an accuracty in train of {:.2f}".format(XGBoost_Tfid_prediction_accuracy_train))
 print("XGBoost has an accuracty in test of {:.2f}".format(XGBoost_accuracy_Tfid))
 
+#PICKLE Y GUARDADO DE MODELOS
+
+import pickle
+
 #Guardamos modelo con pickle
-with open("XGBoost_Tfid_model.pkl", 'wb') as file:
-    pickle.dump(XGBoost_model_Tfid, file)
+modelos_entrenados = {
+    "Tfid_vectorizer":Tfid_vectorizer,
+    "XGBoost":XGBoost_model_Tfid
+}
+
+with open("modelos_entrenados.pkl", 'wb') as file:
+    pickle.dump(modelos_entrenados, file)
 
 #PARTE DEL EDA -----------------------------------------------------------------------------
 from sklearn.metrics import roc_curve, roc_auc_score
