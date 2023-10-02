@@ -1,11 +1,17 @@
-# Entregable_productivizacion
+# **Entregable_productivizacion**
 
-Este trabajo consiste en la subida a producción de un modelo predictivo, concretamente para clasificar noticias reales de otras "fake". 
+Este trabajo consiste en la subida a producción de un modelo predictivo, concretamente para clasificar noticias reales de otras "fake".
+
+Las fases del proyectos son las siguientes:
+- **Creación de la web (API)** para realizar peticiones al modelo, online.
+- **Git** para organizar el código simulando un proyecto real.
+- **Subida a Cloud** para poder acceder al modelo desde cualquier parte del mundo.
+- **Spark** para simular peticiones a una base de datos real.
 
 Este repositorio contendrá tres ramas principales:
-- main: Rama de producción
-- HotFix: Rama para pequeños cambios en producción
-- Develop: Rama sobre la que se realizarán los merge de las distintas funcionalidades (flask, AWS, APIs, etc.)
+- **main**: Rama de producción
+- **HotFix**: Rama para pequeños cambios en producción
+- **Develop**: Rama sobre la que se realizarán los merge de las distintas funcionalidades (flask, AWS, APIs, etc.)
 
 En primer lugar, se deberá realizar un forkeo y clonado del repositorio. 
 
