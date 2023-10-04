@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
-from Productivizacion_prueba import analizar_texto
+from predict import analizar_texto
 #from pyspark.sql import SparkSession
 
 app = Flask(__name__)
