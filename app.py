@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
 from predict import analizar_texto
 #from pyspark.sql import SparkSession
+#import sqlite3
 
 app = Flask(__name__)
 
@@ -14,12 +14,12 @@ df = spark.read.format('jdbc').options(
           url='jdbc:sqlite:' + db_path,
           dbtable='predictions').load()'''
 
-#ruta para la pagina principal
+# ruta para la pagina principal
 @app.route('/')
 def index():
     return render_template('index.html')
 
-#ruta para el formulario de predicción de noticias
+# ruta para el formulario de predicción de noticias
 @app.route('/form', methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
@@ -28,12 +28,12 @@ def form():
         return redirect(url_for('prediction', prediction=prediction))
     return render_template('form.html')
 
-#ruta para mostrar el resultado de la predicción
+# ruta para mostrar el resultado de la predicción
 @app.route('/prediction/<prediction>')
 def prediction(prediction):
     return render_template('prediction.html', prediction=prediction)
 
-#ruta para guardar la predicción en la base de datos
+# ruta para guardar la predicción en la base de datos
 '''@app.route('/store_prediction', methods=['POST'])
 def store_prediction():
     news = request.form['news']
@@ -45,7 +45,7 @@ def store_prediction():
           dbtable='predictions').mode('append').save()
     return redirect(url_for('read_predictions'))'''
 
-#ruta para leer las predicciones almacenadas en la base de datos
+# ruta para leer las predicciones almacenadas en la base de datos
 '''@app.route('/read_predictions')
 def read_predictions():
     df = spark.read.format('jdbc').options(
@@ -54,7 +54,7 @@ def read_predictions():
     predictions = df.collect()
     return render_template('read_prediction.html', predictions=predictions)'''
 
-#ruta para leer las noticias según su tipo (fake o true)
+# ruta para leer las noticias según su tipo (fake o true)
 '''@app.route('/news/<type>')
 def news(type):
     df = spark.read.format('jdbc').options(
@@ -69,4 +69,3 @@ def news(type):
 
 if __name__ == '__main__':
     app.run(debug=True, port=3500)
-

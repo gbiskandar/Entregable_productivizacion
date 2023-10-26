@@ -1,6 +1,6 @@
 import pickle
-import sklearn
-import xgboost
+import nltk
+
 def analizar_texto(texto_analizar):
     # Cargar modelos desde el archivo pickle
     with open("modelos_entrenados.pkl", 'rb') as file:
@@ -10,7 +10,6 @@ def analizar_texto(texto_analizar):
     tfidf_vectorizer = modelos_cargados["Tfid_vectorizer"]
     xgboost_model = modelos_cargados["XGBoost"]
     
-    import nltk
     from nltk.corpus import stopwords
     nltk.download('stopwords')
     from nltk.tokenize import word_tokenize
@@ -27,10 +26,6 @@ def analizar_texto(texto_analizar):
         return ' '.join(palabras_filtradas)
     
     texto_analizar_tokenizado = tokenizado_stopwords(texto_analizar)
-    
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    import xgboost as xgb
-    from xgboost import XGBClassifier
     
     texto_vectorizado = tfidf_vectorizer.transform([texto_analizar_tokenizado])
     prediccion = xgboost_model.predict(texto_vectorizado)
