@@ -14,7 +14,7 @@ To run this project in your local environment, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/gbiskandar/Ancient-Sites.git
+   git clone https://github.com/gbiskandar/Real-Fake-News.git
    ```
 
 2. Install the necessary dependencies:
