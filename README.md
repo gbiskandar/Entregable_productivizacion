@@ -1,24 +1,42 @@
-# **Entregable_productivizacion**
+# Real Fake News
+========================================================
 
-Este trabajo consiste en la subida a producción de un modelo predictivo, concretamente para clasificar noticias reales de otras "fake".
+This project consists of using a predictive data science model (XGBoost) to classify real news from other "fake" ones. The model is trained on a large kaggle dataset of real and fake news. The text is tokenized, vectorized, and stopwords eliminated to increase the accuracy of the model. Enjoy distinguishing real news from fake news. DISCLAIMER: The model is not accurate all the time, so please take the analysis as a suggestion, rather than a statement of fact.
 
-Las fases del proyectos son las siguientes:
-- **Creación de la web (API)** para realizar peticiones al modelo, online.
-- **Git** para organizar el código simulando un proyecto real.
-- **Subida a Cloud** para poder acceder al modelo desde cualquier parte del mundo.
-- **Spark** para simular peticiones a una base de datos real.
+## Data
 
-Este repositorio contendrá tres ramas principales:
-- **main**: Rama de producción
-- **HotFix**: Rama para pequeños cambios en producción
-- **Develop**: Rama sobre la que se realizarán los merge de las distintas funcionalidades (flask, AWS, APIs, etc.)
+Download the WELFake_Dataset.csv dataset from kaggle at: https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification
 
-En primer lugar, se deberá realizar un forkeo y clonado del repositorio. 
+## Installation
 
-Cada desarrollador creará una rama adicional que se nombrará como Feature_nombre (ie: Feature_Flask, feature_API) y sobre la cual trabajará y realizará los distintos commits.
+To run this project in your local environment, follow these steps:
 
-Una vez el commit tenga la funcionalidad deseada, se realizará, previa autorización, el merge con la rama develop. 
+1. Clone the repository:
 
-Una vez todas las funcionalidades hayan sido añadidas a la rama Develop, se realizará un merge con la rama HotFix, sobre la cual se realizarán pequeños cambios para optimizar o mejorar aspectos mínimos. 
+   ```bash
+   git clone https://github.com/gbiskandar/Ancient-Sites.git
+   ```
 
-Cuando el funcionamiento sea el correcto, se realizará un último merge con main, para tener el código final que se subirá a producción. 
+2. Install the necessary dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Execute the initial program to initate the web application
+
+   ```bash
+   python3 app.py
+   ```
+
+## Contributions
+
+I thank my colleagues at The Bridge Digital Talent Accelerator in Madrid: [Guillermo Mokry](https://github.com/gmokry), [Diana Luzuriaga](https://github.com/Luzuriaga89), [Mariano Llobet](https://github.com/MarianoLlobet5), [Isabel Legon](https://github.com/ClementinaB), [Antonio de la Macorra](https://github.com/adlmacorra), [Nicolas Hoces](https://github.com/nichoces), Alfonso Caballero, for their contributions to the development of the project.
+
+## Contact
+
+For any questions or comments, feel free to contact me at [info@invex.pro](mailto:info@invex.pro).
+
+## License
+
+This project is under the open source license [Licencia MIT](LICENSE).
