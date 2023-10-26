@@ -31,4 +31,4 @@ def analizar_texto(texto_analizar):
     prediccion = xgboost_model.predict(texto_vectorizado)
     
     # Devuelve la predicción como resultado
-    return "La información que usted ha consultado es probablemente verdadera" if prediccion == 0 else "La información que usted ha consultado es probablemente falsa"
+    return "The information contained in this news article is probably true" if prediccion == 0 else "The information contained in this news article is probably false"
